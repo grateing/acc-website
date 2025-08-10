@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asian Computer College</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://via.placeholder.com/1500x800') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px;
+            background-color: #08345c;
+        }
+        .header-title {
+            display: inline-block;
+            height: 70px;
+            line-height: 70px;
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #e4e5e4;
+            margin-left: 18px;
+            white-space: nowrap;
+            vertical-align: middle;
+            text-decoration: none;
+            flex-shrink: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+        .logo {
+            height: 50px;
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+        }
+        .nav a {
+            color: #fff;
+            margin: 0 8px; /* Reduced margin to make links closer */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+        .menu-icon span {
+            height: 4px;
+            width: 25px;
+            background: #fff;
+            margin: 4px 0;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+        @media (max-width: 700px) {
+            .nav {
+                display: none;
+                position: relative;
+                top: 60px;
+                right: 10px;
+                background: #08345c;
+                flex-direction: column;
+                width: 180px;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+                z-index: 100;
+            }
+            .nav.show {
+                display: flex;
+            }
+            .menu-icon {
+                display: flex;
+            }
+        }
+        .content {
+            text-align: center;
+            padding: 100px 20px;
+            background: rgba(30, 58, 138, 0.8);
+        }
+        .content h1 {
+            font-size: 3em;
+            color: #e4e5e4;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .content button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #e4e5e4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #1E3A8A;
+        }
+        .content button:hover {
+            background-color: #ddd;
+        }
+        /* Settings Dashboard Styles */
+        #settings-dashboard {
+            position: fixed;
+            top: 0;
+            right: -320px;
+            width: 300px;
+            height: 100vh;
+            background: #1e3a8a;
+            color: #e4e5e4;
+            box-shadow: -2px 0 12px rgba(0,0,0,0.2);
+            z-index: 999;
+            transition: right 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        #settings-dashboard .close-btn {
+            background: none;
+            border: none;
+            color: #e4e5e4;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        /* Adjust the spacing between the button and the navigation links */
+        .nav a {
+            color: #fff;
+            margin: 0 8px; /* Reduced margin to make links closer */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Adjust the spacing of the button */
+        #settings-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;  
+            margin-left: 10px; /* Reduced margin to bring it closer */
+            position: relative; /* Make sure it's aligned properly */
+            top: 2px; /* Fine-tune vertical alignment */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html">
+            <img src="logo1.png" alt="ACC Logo" class="logo" style="height:70px; width:auto; position: relative; top: 1px;">
+        </a>
+        <a href="/" class="header-title"></a>
+        <div class="menu-icon" id="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav" id="nav">
+            <a href="acc (about).html" style="color: #e4e5e4;position: relative">About ACC</a>
+            <a href="#admissions" style="color: #e4e5e4;position: relative">Admissions</a>
+            <a href="#academics" style="color: #e4e5e4;position: relative">Academics</a>
+            <a href="#public-service" style="color: #e4e5e4;position: relative">Alumni</a>
+            <a href="#alumni" style="color: #e4e5e4;position: relative">Student Portal</a>
+        </div>
+        <button id="settings-btn" title="Settings" style="background:none;border:none;cursor:pointer;padding:22px;margin-left:-250px;position: relative; top: 1px;">
+            <img src="settings-button.png" alt="Image" width="38" height="28"/>
+        </button>
+    </div>
+    <div class="content">
+        <h1>THE 10 FLAGSHIP PROGRAMS</h1>
+        <p>With a focus on fostering a just, equitable, and sustainable society, ACC's strategic themes prioritize preparing graduates for the future, promoting public service for the common good and ensuring transparent and accountable governance.</p>
+        <button>Read more</button>
+    </div>
+    <!-- Settings Dashboard Overlay -->
+    <div id="settings-dashboard" style="position:fixed;top:0;right:-320px;width:300px;height:100vh;background:#1e3a8a;color:#e4e5e4;box-shadow:-2px 0 12px rgba(0,0,0,0.2);z-index:999;transition:right 0.3s;display:flex;flex-direction:column;">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 18px 0 18px;">
+            <h2 style="margin:0;font-size:1.3em;">Settings</h2>
+            <button id="close-settings" class="close-btn" style="background:none;border:none;color:#e4e5e4;font-size:1.5em;cursor:pointer;">&times;</button>
+        </div>
+        <div style="padding:18px;">
+            <p style="margin-top:0;">Settings content goes here.</p>
+            <!-- Add your dashboard controls here -->
+        </div>
+    </div>
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const nav = document.getElementById('nav');
+
+        menuIcon.addEventListener('click', () => {
+            nav.classList.toggle('show');
+        });
+
+        // Optional: Hide nav when clicking a link (for better UX on mobile)
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 700) {
+                    nav.classList.remove('show');
+                }
+            });
+        });
+
+        // Settings dashboard logic
+        const settingsBtn = document.getElementById('settings-btn');
+        const settingsDashboard = document.getElementById('settings-dashboard');
+        const closeSettings = document.getElementById('close-settings');
+        settingsBtn.addEventListener('click', () => {
+            settingsDashboard.style.right = '0';
+        });
+        closeSettings.addEventListener('click', () => {
+            settingsDashboard.style.right = '-320px';
+        });
+        // Optional: close dashboard when clicking outside
+        document.addEventListener('mousedown', function(e) {
+            if (settingsDashboard.style.right === '0' && !settingsDashboard.contains(e.target) && e.target !== settingsBtn) {
+                settingsDashboard.style.right = '-320px';
+            }
+        });
+    </script>
+</body>
+</html>
