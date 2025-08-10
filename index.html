@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asian Computer College</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://via.placeholder.com/1500x800') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px;
+            background-color: #08345c;
+        }
+        .header-title {
+            display: inline-block;
+            height: 70px;
+            line-height: 70px;
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #e4e5e4;
+            margin-left: 18px;
+            white-space: nowrap;
+            vertical-align: middle;
+            text-decoration: none;
+            flex-shrink: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+        .logo {
+            height: 50px;
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+        }
+        .nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+        .menu-icon span {
+            height: 4px;
+            width: 25px;
+            background: #fff;
+            margin: 4px 0;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+        @media (max-width: 700px) {
+            .nav {
+                display: none;
+                position: absolute;
+                top: 60px;
+                right: 10px;
+                background: #08345c;
+                flex-direction: column;
+                width: 180px;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+                z-index: 100;
+            }
+            .nav.show {
+                display: flex;
+            }
+            .menu-icon {
+                display: flex;
+            }
+        }
+        .content {
+            text-align: center;
+            padding: 100px 20px;
+            background: rgba(30, 58, 138, 0.8);
+        }
+        .content h1 {
+            font-size: 3em;
+            color: #e4e5e4;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .content button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #e4e5e4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #1E3A8A;
+        }
+        .content button:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html">
+            <img src="logo1.png" alt="ACC Logo" class="logo" style="height:70px; width:auto; position: relative; top: 1px;">
+        </a>
+        <a href="/" class="header-title"></a>
+        <div class="menu-icon" id="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav" id="nav">
+            <a href="acc (about).html" style="color: #e4e5e4;">About ACC</a>
+            <a href="#admissions" style="color: #e4e5e4;">Admissions</a>
+            <a href="#academics" style="color: #e4e5e4;">Academics and Research</a>
+            <a href="#public-service" style="color: #e4e5e4;">Public Service</a>
+            <a href="#alumni" style="color: #e4e5e4;">Alumni</a>
+        </div>
+    </div>
+    <div class="content">
+        <h1>THE 10 FLAGSHIP PROGRAMS</h1>
+        <p>With a focus on fostering a just, equitable, and sustainable society, ACC's strategic themes prioritize preparing graduates for the future, promoting public service for the common good and ensuring transparent and accountable governance.</p>
+        <button>Read more</button>
+    </div>
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const nav = document.getElementById('nav');
+
+        menuIcon.addEventListener('click', () => {
+            nav.classList.toggle('show');
+        });
+
+        // Optional: Hide nav when clicking a link (for better UX on mobile)
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 700) {
+                    nav.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
