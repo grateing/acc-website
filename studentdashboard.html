@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACC Student Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://via.placeholder.com/1500x800') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            background-color: #08345c;
+            height: 70px;
+        }
+        .logo {
+            height: 50px;
+            margin-left: 20px;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+        .nav-links a {
+            color: #fff;
+            margin: 0 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+            padding: 0 5px;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+        .logout-btn {
+            background-color: #1E3A8A;
+            color: #fff;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .logout-btn:hover {
+            background-color: #c0392b;
+        }
+        #settings-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            margin: 0 5px;
+        }
+        #settings-btn img {
+            width: 30px;
+            height: 24px;
+        }
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .menu-icon span {
+            height: 4px;
+            width: 25px;
+            background: #fff;
+            margin: 2px 0;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+        @media (max-width: 700px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 50px;
+                right: 10px;
+                background: #08345c;
+                flex-direction: column;
+                width: 150px;
+                border-radius: 5px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+                z-index: 100;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .menu-icon {
+                display: flex;
+            }
+            .header-actions {
+                margin-right: 5px;
+            }
+        }
+        .content {
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .student-info {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+        .student-photo {
+            border: 3px solid #ddd;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        .student-photo img {
+            width: 120px;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .student-photo p {
+            margin: 5px 0;
+            color: #333;
+            line-height: 1.5;
+        }
+        .updates {
+            border: 2px dashed #ddd;
+            padding: 20px;
+            margin-top: 0;
+            min-height: 250px;
+            background-color: #fff;
+            border-radius: 5px;
+            flex: 1;
+        }
+        .updates strong {
+            color: #2980b9;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .updates p {
+            margin: 5px 0;
+            color: #7f8c8d;
+        }
+        .btn {
+            background-color: #2ecc71;
+            color: #fff;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html">
+            <img src="myACC.png" alt="ACC Logo" class="logo" style="margin-left: 60px;">
+        </a>
+        <div class="nav-links" id="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Class Discussions</a>
+            <a href="#">Directory</a>
+            <a href="#">View & Pay Fees</a>
+        </div>
+        <div class="header-actions">
+            <a href="myACC.html" class="logout-btn">Logout</a>
+            <button id="settings-btn" title="Settings">
+                <img src="settings-button.png" alt="Settings" width="120" height="120" />
+            </button>
+        </div>
+        <div class="menu-icon" id="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="content">
+        <h1 style="color: #08345c; font-size: 2em; margin-bottom: 20px;">Student Updates</h1>
+        <div class="student-info">
+            <div class="student-photo">
+                <img src="pdiddy.jpg" alt="P Diddy">
+                <p>Sean John Combs<br>10th Grade<br>Mavericks<br>Age: 55</p>
+                <a href="#" class="btn">View Complete Record</a>
+            </div>
+            <div class="updates">
+                <strong>ATTENDANCE: see all</strong>
+                <p>08/08/2025: Absent</p>
+                <p>08/07/2025: Absent</p>
+                <p>08/06/2025: Absent</p>
+                <p>08/05/2025: Absent</p>
+                <strong>HOMEWORK ASSIGNED: see all</strong>
+                <p>TLE: Website Presentation (08/11-08/15)</p>
+                <p>Filipino: Timeline (08/15)</p>
+                <strong>HOMEWORK DUE: see all</strong>
+                <p>TLE: Website Presentation (08/11-08/15)</p>
+                <p>Updates appear here</p>
+            </div>
+        </div>
+    </div>
+    <div id="settings-dashboard">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 18px 0 18px;">
+            <h2 style="margin:0;font-size:1.3em;">Settings</h2>
+            <button id="close-settings" class="close-btn">&times;</button>
+        </div>
+        <div style="padding:18px;">
+            <p style="margin-top:0;">Settings content goes here.</p>
+        </div>
+    </div>
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const navLinks = document.getElementById('nav-links');
+        const settingsBtn = document.getElementById('settings-btn');
+        const settingsDashboard = document.getElementById('settings-dashboard');
+        const closeSettings = document.getElementById('close-settings');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 700) {
+                    navLinks.classList.remove('show');
+                }
+            });
+        });
+
+        settingsBtn.addEventListener('click', () => {
+            settingsDashboard.style.right = '0';
+        });
+
+        closeSettings.addEventListener('click', () => {
+            settingsDashboard.style.right = '-320px';
+        });
+
+        document.addEventListener('mousedown', function(e) {
+            if (settingsDashboard.style.right === '0' && !settingsDashboard.contains(e.target) && e.target !== settingsBtn) {
+                settingsDashboard.style.right = '-320px';
+            }
+        });
+    </script>
+</body>
+</html>
